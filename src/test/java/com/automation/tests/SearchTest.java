@@ -1,6 +1,7 @@
 package com.automation.tests;
 
 import com.automation.utils.ExcelUtils;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -13,6 +14,8 @@ public class SearchTest extends BaseTest {
         homePage.openWebsite();
         Thread.sleep(5000);
         homePage.searchProd(data);
+
+        Assert.assertTrue(searchPage.isSearchedProdPageDisplayed(data));
     }
 
     @DataProvider
